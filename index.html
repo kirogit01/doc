@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pharm Leads Academy</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial, sans-serif;background:#f5f7fa}
+
+/* NAVBAR */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(26,188,156,0.9);
+  backdrop-filter:blur(10px);
+  padding:15px 30px;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.navbar h2{
+  font-size:22px;
+  letter-spacing:1px;
+}
+
+.navbar div{
+  display:flex;
+  gap:20px;
+}
+
+.navbar a{
+  position:relative;
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  padding:5px;
+  transition:0.3s;
+}
+
+/* underline hover effect */
+.navbar a::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  bottom:0;
+  left:0;
+  background:white;
+  transition:0.3s;
+}
+
+.navbar a:hover::after{
+  width:100%;
+}
+
+.navbar a:hover{
+  opacity:0.8;
+}
+
+/* HERO */
+.hero{
+  height:90vh;
+  background:url('landing.png') center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;color:white;padding:20px;
+}
+.hero-box{
+  background:rgba(0,0,0,0.6);
+  padding:25px;border-radius:12px;max-width:600px;
+}
+.hero h1{font-size:38px;margin:0}
+.hero p{margin:15px 0}
+
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  background:#1abc9c;color:white;
+  border-radius:6px;text-decoration:none;
+  transition:.3s;
+}
+.btn:hover{background:#16a085}
+
+/* TITLE */
+.title{text-align:center;margin:40px 0}
+
+/* COURSES */
+.course-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;padding:20px;
+}
+.card{
+  background:white;border-radius:12px;overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-6px)}
+.card img{width:100%;height:160px;object-fit:cover}
+.card-body{padding:15px}
+.price{color:green;font-weight:bold;margin:10px 0}
+
+/* CONTACT */
+.contact{
+  background:#16a085;color:white;
+  text-align:center;padding:40px 20px;
+}
+
+footer{
+  text-align:center;padding:15px;background:#222;color:white;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{font-size:26px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <h2>Pharm Leads</h2>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-box">
+    <h1>Welcome to Pharm Leads Academy</h1>
+    <p>Your future in healthcare starts here</p>
+    <a href="#courses" class="btn">Explore Courses</a>
+  </div>
+</section>
+
+<!-- COURSES -->
+<div class="title">
+  <h1>Our Courses</h1>
+  <p>Choose from a range of pharmacy programs</p>
+</div>
+
+<div class="course-container" id="courses">
+
+  <div class="card">
+    <img src="IM 02.avif">
+    <div class="card-body">
+      <h3>Assistant Pharmacist Course</h3>
+      <div class="price">LKR 15,000</div>
+      <a href="#" class="btn">Enroll Now</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="IM 03.jpg">
+    <div class="card-body">
+      <h3>Diploma in Pharmacist Course</h3>
+      <div class="price">LKR 18,000</div>
+      <a href="#" class="btn">Enroll Now</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="IM 04.jpg">
+    <div class="card-body">
+      <h3>Pharmacist External Examination</h3>
+      <div class="price">LKR 12,000</div>
+      <a href="#" class="btn">Enroll Now</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="IM 05.jpeg">
+    <div class="card-body">
+      <h3>Nursing Technician Course</h3>
+      <div class="price">LKR 20,000</div>
+      <a href="#" class="btn">Enroll Now</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="IM 02.avif">
+    <div class="card-body">
+      <h3>MLT Technician Course</h3>
+      <div class="price">LKR 22,000</div>
+      <a href="#" class="btn">Enroll Now</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>📍 No. 123, Main Street, Colombo</p>
+  <p>📞 +94 77 123 4567</p>
+  <p>📧 pharmleads@gmail.com</p>
+</section>
+
+<footer>
+  © 2026 Pharm Leads Academy
+</footer>
+
+</body>
+</html>
