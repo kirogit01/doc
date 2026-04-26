@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pharm Leads Academy</title>
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial, sans-serif;background:#f5f7fa}
+body{
+  margin:0;
+  background:#f5f7fa;
+  font-family:'Poppins', sans-serif;
+}
 
 /* NAVBAR */
 .navbar{
@@ -43,7 +48,6 @@ body{margin:0;font-family:Arial, sans-serif;background:#f5f7fa}
   transition:0.3s;
 }
 
-/* underline hover effect */
 .navbar a::after{
   content:"";
   position:absolute;
@@ -62,29 +66,53 @@ body{margin:0;font-family:Arial, sans-serif;background:#f5f7fa}
 .navbar a:hover{
   opacity:0.8;
 }
+/* LOGO */
+.logo{
+  width:40px;
+  height:40px;
+  object-fit:contain;
+}
+
+/* ALIGN LOGO + TEXT */
+.navbar div:first-child{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
 
 /* HERO */
 .hero{
   height:90vh;
   background:url('landing.png') center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;color:white;padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:20px;
 }
+
 .hero-box{
-  background:rgba(0,0,0,0.6);
-  padding:25px;border-radius:12px;max-width:600px;
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  max-width:600px;
 }
+
 .hero h1{font-size:38px;margin:0}
 .hero p{margin:15px 0}
 
 .btn{
   display:inline-block;
   padding:10px 16px;
-  background:#1abc9c;color:white;
-  border-radius:6px;text-decoration:none;
+  background:#1abc9c;
+  color:white;
+  border-radius:6px;
+  text-decoration:none;
   transition:.3s;
 }
-.btn:hover{background:#16a085}
+.btn:hover{background:#1a84cf}
 
 /* TITLE */
 .title{text-align:center;margin:40px 0}
@@ -93,32 +121,191 @@ body{margin:0;font-family:Arial, sans-serif;background:#f5f7fa}
 .course-container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;padding:20px;
+  gap:20px;
+  padding:20px;
 }
+
 .card{
-  background:white;border-radius:12px;overflow:hidden;
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
   box-shadow:0 4px 12px rgba(0,0,0,0.1);
   transition:.3s;
+  position:relative;
 }
-.card:hover{transform:translateY(-6px)}
-.card img{width:100%;height:160px;object-fit:cover}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  transition:transform 0.4s ease;
+}
+
+.card:hover img{
+  transform:scale(1.1);
+}
+
+.card::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:240px;
+  background:rgba(0,0,0,0);
+  transition:0.4s;
+}
+
+.card:hover::after{
+  background:rgba(0,0,0,0.25);
+}
+
 .card-body{padding:15px}
 .price{color:green;font-weight:bold;margin:10px 0}
 
+/* TEXT STYLES */
+.wel{text-align:center;color:green;font-size:20px;}
+.acc{
+  text-align:center;
+  color:red;
+  text-transform:uppercase;
+  font-size:35px;
+  font-weight:bold;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.medi{text-align:center;color:rgb(29,110,139);font-size:18px;}
+.cname{
+  text-align:center;
+  color:rgb(26,188,156);
+  font-size:20px;
+  font-weight:bold;
+}
+
 /* CONTACT */
 .contact{
-  background:#16a085;color:white;
-  text-align:center;padding:40px 20px;
+  background:rgb(90,130,160);
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
+
+.contact-box{
+  max-width:500px;
+  margin:20px auto 0;
+  background:rgba(255,255,255,0.1);
+  padding:20px;
+  border-radius:12px;
+  backdrop-filter:blur(10px);
+}
+
+.contact-buttons{
+  margin-top:20px;
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.wa-btn{
+  background:#25D366;
+  color:white;
+  padding:10px 18px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+.wa-btn:hover{
+  background:#1ebe5d;
+  transform:scale(1.05);
+}
+
+.email-btn{
+  background:#0072c6;
+  color:white;
+  padding:10px 18px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+.email-btn:hover{
+  background:#005fa3;
+  transform:scale(1.05);
 }
 
 footer{
-  text-align:center;padding:15px;background:#222;color:white;
+  text-align:center;
+  padding:15px;
+  background:#222;
+  color:white;
 }
 
-/* RESPONSIVE */
+/* ✅ RESPONSIVE */
+
+/* Tablet */
 @media(max-width:768px){
-  .hero h1{font-size:26px}
+
+  .navbar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .navbar div{
+    width:100%;
+    justify-content:space-around;
+  }
+
+  .hero{
+    height:auto;
+    padding:60px 20px;
+  }
+
+  .hero-box{
+    padding:20px;
+  }
+
+  .hero h1{font-size:24px;}
+  .acc{font-size:24px;}
+  .medi{font-size:14px;}
+
+  .course-container{
+    grid-template-columns:1fr;
+    padding:10px;
+  }
+
+  .card img{
+    height:200px;
+  }
 }
+
+/* Mobile */
+@media(max-width:480px){
+
+  .title h1{
+    font-size:20px;
+  }
+
+  .cname{
+    font-size:16px;
+  }
+
+  .contact-buttons{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .wa-btn, .email-btn{
+    width:100%;
+    text-align:center;
+  }
+}
+
 </style>
 </head>
 
@@ -126,7 +313,10 @@ footer{
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <h2>Pharm Leads</h2>
+  <div>
+    <h2>Pharm Leads Academy</h2>
+    <img src="logo1.png" class="logo" alt="">
+  </div>
   <div>
     <a href="#home">Home</a>
     <a href="#courses">Courses</a>
@@ -137,62 +327,56 @@ footer{
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-box">
-    <h1>Welcome to Pharm Leads Academy</h1>
-    <p>Your future in healthcare starts here</p>
+    <p class="wel">Welcome to </p>
+    <p class="acc">Pharm Leads Academy</p>  
+    <p class="medi">Your future in our medical courses</p>
     <a href="#courses" class="btn">Explore Courses</a>
   </div>
 </section>
 
 <!-- COURSES -->
 <div class="title">
-  <h1>Our Courses</h1>
-  <p>Choose from a range of pharmacy programs</p>
+  <h1 style="color:red; font-size:25px;">Our Courses</h1>
+  <p style="color:#1abc9c;font-weight:bold;">Choose from a range of pharmacy programs</p>
 </div>
 
 <div class="course-container" id="courses">
 
   <div class="card">
+    <img src="IM 01.webp">
+    <div class="card-body">
+      <h3 class="cname">Assistant Pharmacist Course</h3>
+    </div>
+  </div>
+
+  <div class="card">
     <img src="IM 02.avif">
     <div class="card-body">
-      <h3>Assistant Pharmacist Course</h3>
-      <div class="price">LKR 15,000</div>
-      <a href="#" class="btn">Enroll Now</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="IM 03.jpg">
-    <div class="card-body">
-      <h3>Diploma in Pharmacist Course</h3>
-      <div class="price">LKR 18,000</div>
-      <a href="#" class="btn">Enroll Now</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="IM 04.jpg">
-    <div class="card-body">
-      <h3>Pharmacist External Examination</h3>
-      <div class="price">LKR 12,000</div>
-      <a href="#" class="btn">Enroll Now</a>
+      <h3 class="cname">Diploma in Pharmacist Course</h3>
     </div>
   </div>
 
   <div class="card">
     <img src="IM 05.jpeg">
     <div class="card-body">
-      <h3>Nursing Technician Course</h3>
-      <div class="price">LKR 20,000</div>
-      <a href="#" class="btn">Enroll Now</a>
+      <h3 class="cname">Pharmacist External Examination</h3>
+      <p style="color:rgb(26,188,156);text-align:center;font-weight:bold;">
+        [Sri Lanka Medical Council]
+      </p>
     </div>
   </div>
 
   <div class="card">
-    <img src="IM 02.avif">
+    <img src="IM 03.jpg">
     <div class="card-body">
-      <h3>MLT Technician Course</h3>
-      <div class="price">LKR 22,000</div>
-      <a href="#" class="btn">Enroll Now</a>
+      <h3 class="cname">Nursing Technician Course</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="IM 04.jpg">
+    <div class="card-body">
+      <h3 class="cname">MLT Technician Course</h3>
     </div>
   </div>
 
@@ -201,9 +385,22 @@ footer{
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <h2>Contact Us</h2>
-  <p>📍 No. 123, Main Street, Colombo</p>
-  <p>📞 +94 77 123 4567</p>
-  <p>📧 pharmleads@gmail.com</p>
+
+  <div class="contact-box">
+    <p>📞 0719 588 544 , 0760 866 867 , 032 222 44 22</p>
+    <p>📧 pharmleadsacademy@gmail.com</p>
+    <p>📍 No 32, Wattakkaliya, Chilaw</p>
+
+    <div class="contact-buttons">
+      <a href="https://wa.me/94719588544?text=Hello%20I%20want%20course%20details" target="_blank" class="wa-btn">
+        WhatsApp Us
+      </a>
+
+      <a href="mailto:pharmleadsacademy@gmail.com?subject=Course Inquiry&body=Hello, I want more details about your courses." class="email-btn">
+        Email Us
+      </a>
+    </div>
+  </div>
 </section>
 
 <footer>
